@@ -4,9 +4,10 @@
     "margin-left": 10,
     "margin-bottom": 0,
     "margin-right": 10,
-    "spacing": 10, // Gaps between modules (4px)
-    "modules-left": ["custom/launcher", "cpu", "memory", "wlr/workspaces"],
-    "modules-right": [ "backlight", "pulseaudio", "network", "battery", "clock", "tray"],
+    "spacing": 15, // Gaps between modules (4px)
+    "modules-left": ["custom/launcher", "wlr/workspaces"],
+    "modules-center": ["memory", "clock", "cpu"],
+    "modules-right": [ "backlight", "pulseaudio", "network", "battery", "tray"],
     "wlr/workspaces": {
       "format": "{icon}",
       "on-click": "activate",

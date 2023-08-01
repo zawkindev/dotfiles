@@ -1,7 +1,7 @@
 ![](./screenshot.png?raw=true)
 ![](./screen.png?raw=true)
 
-<h1>**Includes**</h1>
+<h2>Includes</h2>
 
 - `Kvantum` config
 - `Hyprland` config

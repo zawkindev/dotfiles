@@ -1,7 +1,7 @@
 ![](./screenshot.png?raw=true)
 ![](./screen.png?raw=true)
 
-<h2>Includes</h2>
+**Includes:**
 
 - `Kvantum` config
 - `Hyprland` config
@@ -14,6 +14,6 @@
 
 <hr />
 
-<h3>Thanks to:</h3>
-- <strong>Takuya</strong> for creating greate Solarized [`Neovim dotfiles`](https://github.com/craftzdog/dotfiles-public)
-- <strong>1amSimp1e</strong> for amazing [`waybar config`](https://github.com/1amSimp1e/dots)
+**Thanks to:**
+- *Takuya* for creating greate Solarized [`Neovim dotfiles`](https://github.com/craftzdog/dotfiles-public)
+- *1amSimp1e* for amazing [`waybar config`](https://github.com/1amSimp1e/dots)

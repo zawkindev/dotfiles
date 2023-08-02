@@ -8,7 +8,7 @@
 - `tmux` config
 - custom Solarized `Alacritty` colorscheme
 - `waybar` and `rofi` with Solarized colorscheme
-- [`wallpaper`](./wallpaper/wallpaper.jpg)
+- [`wallpaper`](./wallpaper/wallpaper.png)
 
 <hr />
 

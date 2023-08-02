@@ -20,6 +20,11 @@ keymap.set('n', 'te', ':tabedit')
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+-- Quit
+keymap.set('n', 'sc', ':q<Return>')
+keymap.set('n', 'sq', ':q!<Return>')
+-- Save
+keymap.set('n', 'sw', ':w<Return>')
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')

@@ -7,6 +7,7 @@
 - `Hyprland` config
 - `tmux` config
 - `nvim` config
+- `powershell` config
 - custom Solarized `Alacritty` colorscheme
 - `waybar` and `rofi` with Solarized colorscheme
 - [`wallpaper`](./wallpaper/wallpaper.png)

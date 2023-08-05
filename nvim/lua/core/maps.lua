@@ -15,8 +15,18 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- New tab
-keymap.set('n', 'te', ':tabedit')
+-- Working with tabs
+keymap.set('n', 'mc', ':tabnew<Return>')
+keymap.set('n', 'mk', ':tabclose<Return>')
+keymap.set('n', 'mn', ':+tabnext<Return>')
+keymap.set('n', 'ml', ':-tabnext<Return>')
+keymap.set('n', 'ma', ':1tabnext<Return>')
+keymap.set('n', 'm;', ':$tabnext<Return>')
+keymap.set('n', 'mtn', ':+tabmove<Return>')
+keymap.set('n', 'mtl', ':-tabmove<Return>')
+keymap.set('n', 'mta', ':0tabmove<Return>')
+keymap.set('n', 'mt;', ':$tabmove<Return>')
+
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
@@ -24,7 +34,7 @@ keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 keymap.set('n', 'sc', ':q<Return>')
 keymap.set('n', 'sq', ':q!<Return>')
 -- Save
-keymap.set('n', 'sw', ':w<Return>')
+keymap.set('n', 'sw', ':w!<Return>')
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')

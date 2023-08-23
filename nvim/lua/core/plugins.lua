@@ -61,6 +61,10 @@ return require('packer').startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browse
   use 'MunifTanjim/prettier.nvim'
 
+  use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v2.x',
+  }
   -- For git blame & browse
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

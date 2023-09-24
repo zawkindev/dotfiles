@@ -30,7 +30,3 @@ null_ls.setup({
     end
   end,
 })
-
-
-
--- clang_format

@@ -6,10 +6,18 @@
         {
             "command": 
             {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "right"
             },
-            "keys": "alt+h"
+            "keys": "alt+v"
         },
         {
             "command": 
@@ -20,20 +28,8 @@
             "keys": "ctrl+j"
         },
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
             "command": "paste",
             "keys": "ctrl+v"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+alt+f"
         },
         {
             "command": 
@@ -43,13 +39,16 @@
             "keys": "ctrl+alt+j"
         },
         {
+            "command": "find",
+            "keys": "ctrl+alt+f"
+        },
+        {
             "command": 
             {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
+                "action": "resizePane",
+                "direction": "left"
             },
-            "keys": "alt+shift+d"
+            "keys": "alt+shift+h"
         },
         {
             "command": "unbound",
@@ -136,6 +135,35 @@
             "keys": "alt+shift+plus"
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+shift+h"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+left"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+right"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+down"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
             "command": "closePane",
             "keys": "alt+k"
         },
@@ -188,14 +216,6 @@
         {
             "command": 
             {
-                "action": "switchToTab",
-                "index": 1
-            },
-            "keys": "alt+2"
-        },
-        {
-            "command": 
-            {
                 "action": "newTab"
             },
             "keys": "alt+c"
@@ -204,9 +224,9 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 2
+                "index": 1
             },
-            "keys": "alt+3"
+            "keys": "alt+2"
         },
         {
             "command": 
@@ -226,6 +246,14 @@
             "command": 
             {
                 "action": "switchToTab",
+                "index": 2
+            },
+            "keys": "alt+3"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
                 "index": 0
             },
             "keys": "alt+1"
@@ -237,6 +265,14 @@
                 "index": 3
             },
             "keys": "alt+4"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "up"
+            },
+            "keys": "alt+shift+k"
         },
         {
             "command": 
@@ -260,13 +296,29 @@
                 "action": "splitPane",
                 "split": "down"
             },
-            "keys": "alt+v"
+            "keys": "alt+h"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "keys": "alt+shift+l"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "down"
+            },
+            "keys": "alt+shift+j"
         }
     ],
-    "alwaysOnTop": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "defaultProfile": "{6bb6e776-c408-444d-a14b-b1acd05e2954}",
+    "firstWindowPreference": "defaultProfile",
     "newTabMenu": 
     [
         {
@@ -277,11 +329,19 @@
     {
         "defaults": 
         {
+            "antialiasingMode": "cleartype",
+            "colorScheme": "GruvboxDarkHard",
             "font": 
             {
-                "face": "Hack Nerd Font Mono",
-                "size": 15.0
+                "face": "DejaVuSansM Nerd Font Mono",
+                "size": 16.0
             },
+            "historySize": 9001,
+            "opacity": 50,
+            "padding": "0",
+            "scrollbarState": "hidden",
+            "snapOnInput": true,
+            "useAcrylic": true,
             "useAtlasEngine": true
         },
         "list": 
@@ -294,32 +354,74 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "font": 
+                {
+                    "face": "CodeNewRoman Nerd Font"
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "Command Prompt"
-            },
-            {
-                "colorScheme": "One Half Dark (mod)",
-                "commandline": "pwsh.exe -nologo",
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
-                "name": "PowerShell",
-                "opacity": 50,
-                "source": "Windows.Terminal.PowershellCore",
-                "useAcrylic": true
+                "name": "Command Prompt",
+                "opacity": 100,
+                "padding": "0",
+                "useAcrylic": false
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "font": 
+                {
+                    "size": 15.0
+                },
+                "guid": "{c397f356-5e7b-55bc-956b-8cb4b9762c26}",
+                "hidden": false,
+                "name": "NixOS",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{5f001389-f0df-5a69-8cd9-48bb422d0063}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{1b3052ef-4f59-59ae-82ef-20e7741800a7}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "colorScheme": "GruvboxDarkHard",
+                "commandline": "C:\\Program Files\\WindowsApps\\22955VineelSai.ArchWSL_1.0.7.0_x64__qz230bc1wsk9j\\Arch.exe",
+                "font": 
+                {
+                    "face": "FiraMono Nerd Font Mono",
+                    "size": 18.0
+                },
+                "guid": "{6bb6e776-c408-444d-a14b-b1acd05e2954}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\WindowsApps\\22955VineelSai.ArchWSL_1.0.7.0_x64__qz230bc1wsk9j\\Assets\\StoreLogo.scale-200.png",
+                "name": "Arch",
+                "opacity": 100,
+                "padding": "0",
+                "scrollbarState": "hidden",
+                "useAcrylic": false
             }
         ]
     },
     "schemes": 
     [
         {
-            "background": "#0C0C0C",
+            "background": "#000000",
             "black": "#0C0C0C",
             "blue": "#0037DA",
             "brightBlack": "#767676",
@@ -365,6 +467,52 @@
             "yellow": "#C19C00"
         },
         {
+            "background": "#000000",
+            "black": "#272932",
+            "blue": "#81FFA3",
+            "brightBlack": "#7B8097",
+            "brightBlue": "#37EBF3",
+            "brightCyan": "#37EBF3",
+            "brightGreen": "#5EEAA6",
+            "brightPurple": "#CB1DCD",
+            "brightRed": "#EB3131",
+            "brightWhite": "#C1DEFF",
+            "brightYellow": "#FFF955",
+            "cursorColor": "#FDF500",
+            "cyan": "#00D0DB",
+            "foreground": "#FF00EE",
+            "green": "#16ED8C",
+            "name": "CyberPunk2077",
+            "purple": "#F313D1",
+            "red": "#ED1A36",
+            "selectionBackground": "#742D8B",
+            "white": "#D1C5C0",
+            "yellow": "#FDF500"
+        },
+        {
+            "background": "#1D2021",
+            "black": "#1B1B1B",
+            "blue": "#458588",
+            "brightBlack": "#928374",
+            "brightBlue": "#83A598",
+            "brightCyan": "#8EC07C",
+            "brightGreen": "#B8BB26",
+            "brightPurple": "#D3869B",
+            "brightRed": "#FB4934",
+            "brightWhite": "#EBDBB2",
+            "brightYellow": "#FABD2F",
+            "cursorColor": "#EBDBB2",
+            "cyan": "#689D6A",
+            "foreground": "#EBDBB2",
+            "green": "#98971A",
+            "name": "GruvboxDarkHard",
+            "purple": "#B16286",
+            "red": "#CC241D",
+            "selectionBackground": "#665C54",
+            "white": "#A89984",
+            "yellow": "#D79921"
+        },
+        {
             "background": "#282C34",
             "black": "#282C34",
             "blue": "#61AFEF",
@@ -403,7 +551,7 @@
             "cyan": "#56B6C2",
             "foreground": "#DCDFE4",
             "green": "#98C379",
-            "name": "One Half Dark (mod)",
+            "name": "One Half Dark [modded]",
             "purple": "#C678DD",
             "red": "#E06C75",
             "selectionBackground": "#FFFFFF",
@@ -572,6 +720,7 @@
             "yellow": "#808000"
         }
     ],
+    "showTerminalTitleInTitlebar": false,
     "themes": 
     [
         {
@@ -617,5 +766,5 @@
             }
         }
     ],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }

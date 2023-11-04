@@ -43,7 +43,7 @@ keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+vim.keymap.set("n", "<C-l>", [[<cmd>vertical resize +5<cr>]])   -- make the window biger vertically
+vim.keymap.set("n", "<C-h>", [[<cmd>vertical resize -5<cr>]])   -- make the window smaller vertically
+vim.keymap.set("n", "<C-k>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+vim.keymap.set("n", "<C-j>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -

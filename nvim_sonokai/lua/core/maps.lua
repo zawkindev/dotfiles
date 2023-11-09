@@ -47,3 +47,6 @@ vim.keymap.set("n", "<C-l>", [[<cmd>vertical resize +5<cr>]])   -- make the wind
 vim.keymap.set("n", "<C-h>", [[<cmd>vertical resize -5<cr>]])   -- make the window smaller vertically
 vim.keymap.set("n", "<C-k>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 vim.keymap.set("n", "<C-j>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
+
+-- Map the key combination to trigger the command
+vim.api.nvim_set_keymap('x', 'rs', ':<C-U>\'<,\'>s/\\%V', { silent = true, noremap = true })

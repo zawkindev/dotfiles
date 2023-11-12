@@ -64,6 +64,9 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+
   -- For git blame & browse
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

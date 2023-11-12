@@ -41,6 +41,9 @@ keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
+-- Open Markdown Preview
+keymap.set('n', 'pp', ':PeekOpen<Return>')
+keymap.set('n', 'pc', ':PeekClose<Return>')
 
 -- Resize window
 vim.keymap.set("n", "<C-l>", [[<cmd>vertical resize +5<cr>]])   -- make the window biger vertically

@@ -50,3 +50,6 @@ vim.keymap.set("n", "<C-j>", [[<cmd>horizontal resize -2<cr>]]) -- make the wind
 
 -- Map the key combination to trigger the command
 vim.api.nvim_set_keymap('x', 'rs', ':<C-U>\'<,\'>s/\\%V', { silent = true, noremap = true })
+
+-- Map a keybinding to call the above function
+vim.api.nvim_set_keymap('n', ';y', '<cmd>lua copy_to_clipboard()<CR>', { noremap = true, silent = true })

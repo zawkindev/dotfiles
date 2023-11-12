@@ -27,7 +27,7 @@ vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = false         -- No Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
@@ -44,3 +44,12 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- Use wl-copy as the clipboard provider
+vim.cmd("set clipboard+=unnamedplus")
+
+function copy_to_clipboard(text)
+  local cmd = io.popen("wl-copy", "w")
+  cmd:write(text)
+  cmd:close()
+end

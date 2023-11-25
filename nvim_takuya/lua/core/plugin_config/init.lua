@@ -1,4 +1,5 @@
 require("core.plugin_config.nvim-tree")
+require("core.plugin_config.peek")
 require("core.plugin_config.lsp")
 require("core.plugin_config.prettier")
 require("core.plugin_config.null-ls")

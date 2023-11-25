@@ -42,8 +42,16 @@ keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 
+
+-- Open Markdown Preview
+keymap.set('n', 'pp', ':PeekOpen<Return>')
+keymap.set('n', 'pc', ':PeekClose<Return>')
+
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+vim.keymap.set("n", "<C-h>", [[<cmd>vertical resize +1<cr>]])   -- make the window biger vertically
+vim.keymap.set("n", "<C-l>", [[<cmd>vertical resize -1<cr>]])   -- make the window smaller vertically
+vim.keymap.set("n", "<C-k>", [[<cmd>horizontal resize +1<cr>]]) -- make the window bigger horizontally by pressing shift and =
+vim.keymap.set("n", "<C-j>", [[<cmd>horizontal resize -1<cr>]]) -- make the window smaller horizontally by pressing shift and -
+
+
+vim.api.nvim_set_keymap('x', 'rs', ':<C-U>\'<,\'>s/\\%V', { silent = true, noremap = true })

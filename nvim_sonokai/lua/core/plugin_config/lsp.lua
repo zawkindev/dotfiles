@@ -8,7 +8,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set({ 'n', 'x' }, 'fmt', function()
     vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
   end, opts)
-  lsp.buffer_autoformat()
 end)
 
 lsp.format_mapping('fmt', {

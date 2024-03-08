@@ -43,3 +43,4 @@ keymap.set("n", "<C-j>", [[<cmd>horizontal resize -2<cr>]]) -- make the window s
 vim.api.nvim_set_keymap('x', 'rs', ':<C-U>\'<,\'>s/\\%V', { silent = true, noremap = true })
 
 
+keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')

@@ -18,6 +18,7 @@ o.hlsearch = false
 o.swapfile = false
 o.backup = false
 o.updatetime = 50
+o.signcolumn = "number"
 
 
 vim.cmd([[colorscheme gruvbox-material]])

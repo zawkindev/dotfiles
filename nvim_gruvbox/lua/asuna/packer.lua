@@ -52,6 +52,14 @@ return require('packer').startup(function(use)
   'nvim-tree/nvim-tree.lua',
   }
   use 'nvim-tree/nvim-web-devicons'
+  use 'windwp/nvim-ts-autotag'
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+  }
 
 
 

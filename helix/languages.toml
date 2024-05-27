@@ -1,0 +1,38 @@
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
+
+
+[[language]]
+name = "powershell"
+scope = "source.ps1"
+file-types = ["ps1", "psm1"]
+roots = [".git"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "powershell-editor-services" ]
+
+[language-server.powershell-editor-services]
+command = "pwsh"
+args = ["-NoLogo", "-NoProfile", "-Command", "C:\\projects\\powershell\\PowerShellEditorServices\\PowerShellEditorServices\\Start-EditorServices.ps1 -BundledModulesPath C:\\projects\\powershell\\PowerShellEditorServices -SessionDetailsPath C:\\projects\\powershell\\PowerShellEditorServices\\PowerShellEditorServices.sessions.json -LogPath C:\\projects\\powershell\\PowerShellEditorServices\\PowerShellEditorServices.log -FeatureFlags @() -AdditionalModules @() -HostName helix -HostProfileId 0 -HostVersion 1.0.0 -Stdio -LogLevel Normal"]
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "svelte"
+language-servers = [ "svelteserver", "tailwindcss-ls" ]

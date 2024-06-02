@@ -1,4 +1,4 @@
-theme = "adwaita-dark"
+theme = "base16_transparent"
 
 [editor]
 line-number = "relative"
@@ -6,6 +6,7 @@ mouse = true
 middle-click-paste = true
 completion-timeout = 5
 completion-replace = true
+auto-format = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -25,5 +26,6 @@ mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
-[editor.lsp]
-display-inlay-hints = true
+
+[keys.normal]
+f = ":format"

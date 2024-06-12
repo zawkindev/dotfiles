@@ -1,0 +1,9 @@
+{
+	"font_size": 18,
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"hardware_acceleration": "opengl",
+	"theme": "Adaptive.sublime-theme",
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": false,
+	"ignored_packages": [],
+}

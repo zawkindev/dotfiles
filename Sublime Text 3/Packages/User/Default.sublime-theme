@@ -1,0 +1,15 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+	"variables":
+	{
+	},
+	"rules":
+	[
+		{
+        "class": "sidebar_label",
+        "color": [16,16,16],
+        "font.bold": false,
+        "font.size": 16
+        },
+    ]
+}

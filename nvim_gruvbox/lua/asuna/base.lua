@@ -22,3 +22,16 @@ o.signcolumn = "number"
 
 
 vim.cmd([[colorscheme gruvbox-material]])
+
+-- make statusline transparent
+vim.cmd [[highlight StatusLine guibg=NONE]]
+vim.cmd [[highlight StatusLineNC guibg=NONE]]
+
+
+-- make tabline transparent
+vim.cmd [[highlight TabLine guibg=NONE]]
+vim.cmd [[highlight TabLineFill guibg=NONE]]
+vim.cmd [[highlight TabLineSel guibg=NONE]]
+
+-- make avtive tab name white and bold
+vim.cmd [[highlight TabLineSel guifg=#ffffff gui=bold]]

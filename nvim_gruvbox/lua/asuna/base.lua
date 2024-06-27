@@ -34,4 +34,4 @@ vim.cmd [[highlight TabLineFill guibg=NONE]]
 vim.cmd [[highlight TabLineSel guibg=NONE]]
 
 -- make avtive tab name white and bold
-vim.cmd [[highlight TabLineSel guifg=#ffffff gui=bold]]
+vim.cmd [[highlight TabLineSel guifg=#ffffff gui=bold,italic]]

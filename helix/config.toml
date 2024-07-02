@@ -1,17 +1,9 @@
-theme = "base16_transparent"
+theme = "kanagawa"
 
 [editor]
 line-number = "relative"
-mouse = true
-middle-click-paste = true
-completion-timeout = 5
 completion-replace = true
 auto-format = false
-
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
 
 [editor.file-picker]
 hidden = false

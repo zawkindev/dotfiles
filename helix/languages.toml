@@ -36,3 +36,7 @@ language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
 [[language]]
 name = "svelte"
 language-servers = [ "svelteserver", "tailwindcss-ls" ]
+
+[[language]]
+name = "nix"
+formatter = { command = "nixpkgs-fmt" }

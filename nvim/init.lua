@@ -1,2 +1,1 @@
 require("asuna")
-print("hello")

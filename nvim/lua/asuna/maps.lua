@@ -1,4 +1,6 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.keymap.set("n", ";q", vim.cmd.Ex)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -30,3 +32,9 @@ vim.keymap.set("n", "sh", "<C-w>h")
 vim.keymap.set("n", "sk", "<C-w>k")
 vim.keymap.set("n", "sj", "<C-w>j")
 vim.keymap.set("n", "sl", "<C-w>l")
+
+-- New tab
+vim.keymap.set("n", "mc", ":tabedit<CR>")
+vim.keymap.set("n", "mk", ":bd<CR>")
+vim.keymap.set("n", "mn", ":tabnext<Return>")
+vim.keymap.set("n", "ml", ":tabprev<Return>")

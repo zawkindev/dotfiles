@@ -15,10 +15,21 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.maplocalleader = " "
-
 -- Setup lazy.nvim
-require("lazy").setup("asuna.plugins")
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "asuna.plugins" },
+    { "nvim-tree/nvim-web-devicons", lazy = true },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      opts = {},
+    },
+  },
+  -- automatically check for plugin updates
+  checker = { enabled = false },
+})

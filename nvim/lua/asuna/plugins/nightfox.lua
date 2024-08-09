@@ -4,7 +4,7 @@ return {
   priority = 1000,
   opts = {
     options = {
-      transparent = false,
+      transparent = true,
     },
   },
   config = function(_, opts)

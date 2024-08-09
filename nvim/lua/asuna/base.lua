@@ -18,4 +18,4 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.wo.signcolumn = "no"
+vim.wo.signcolumn = "yes"

@@ -29,6 +29,13 @@ require("lazy").setup({
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       opts = {},
     },
+    {
+      'windwp/nvim-autopairs',
+      event = "InsertEnter",
+      config = true
+      -- use opts = {} for passing setup options
+      -- this is equalent to setup({}) function
+    }
   },
   -- automatically check for plugin updates
   checker = { enabled = false },

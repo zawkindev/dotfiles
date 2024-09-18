@@ -14,6 +14,10 @@
     zsh
     starship
     alacritty
+    hackgen-nf-font
+    hack-font
+    jetbrains-toolbox
+    jetbrains.idea-community-bin
   ];
 
   programs.git = {
@@ -38,7 +42,8 @@
     };
   };
 
-  programs.helix = {
+ 
+programs.helix = {
     enable = true;
     defaultEditor = true;
     settings = {
@@ -71,7 +76,7 @@
       yaml-language-server
       ansible-language-server
     ];
-  };
+  }; 
 
   programs.zsh = {
     enable = true;

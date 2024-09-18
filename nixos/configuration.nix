@@ -33,21 +33,19 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    xkbOptions = "ctrl:swapcaps";
+  };
+
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -57,12 +55,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -88,11 +80,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  gnomeExtensions.user-themes
+  gnomeExtensions.dash-to-dock
+  gnomeExtensions.appindicator
+  gnomeExtensions.topicons-plus
 	gnome.gnome-tweaks
 	evdevremapkeys
 	vim
 	telegram-desktop
-	neovim
+  neovim
 	git
 	wget
 	curl
@@ -104,7 +100,11 @@
   zsh
   ];
 
+  services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
+
   users.defaultUserShell = pkgs.zsh;
+
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -132,5 +132,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

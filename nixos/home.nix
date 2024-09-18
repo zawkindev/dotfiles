@@ -1,6 +1,10 @@
 {config, pkgs, ... }:
 
 {
+  imports = [
+    ./dconf.nix
+  ];
+
   home.username = "shahruz";
   home.homeDirectory = "/home/shahruz";
 

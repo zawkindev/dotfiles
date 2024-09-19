@@ -20,6 +20,7 @@
     alacritty
     hackgen-nf-font
     hack-font
+    dconf2nix
     jetbrains-toolbox
     jetbrains.idea-community-bin
   ];

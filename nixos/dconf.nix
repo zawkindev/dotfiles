@@ -111,11 +111,11 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       always-center-icons = false;
-      apply-custom-theme = false;
+      apply-custom-theme = true;
       autohide-in-fullscreen = false;
-      background-color = "rgb(36,31,49)";
-      background-opacity = 0.8;
-      custom-background-color = false;
+      background-color = "rgb(53,50,50)";
+      background-opacity = 0.95;
+      custom-background-color = true;
       custom-theme-shrink = true;
       dash-max-icon-size = 58;
       disable-overview-on-startup = false;
@@ -125,6 +125,7 @@ with lib.hm.gvariant;
       hot-keys = false;
       icon-size-fixed = false;
       intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      max-alpha = 0.8;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "eDP-2";
       preview-size-scale = 0.0;
@@ -136,7 +137,7 @@ with lib.hm.gvariant;
       show-show-apps-button = false;
       show-trash = false;
       show-windows-preview = false;
-      transparency-mode = "FIXED";
+      transparency-mode = "DEFAULT";
     };
 
     "org/gnome/shell/extensions/system-monitor" = {
@@ -157,7 +158,8 @@ with lib.hm.gvariant;
     };
 
     "org/gtk/gtk4/settings/color-chooser" = {
-      selected-color = mkTuple [ true 0.1411764770746231 0.12156862765550613 0.1921568661928177 1.0 ];
+      custom-colors = [ (mkTuple [ 0.20666666328907013 0.1970222145318985 0.1970222145318985 1.0 ]) ];
+      selected-color = mkTuple [ true 0.20666666328907013 0.1970222145318985 0.1970222145318985 1.0 ];
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {

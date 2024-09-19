@@ -7,7 +7,7 @@ with lib.hm.gvariant;
   dconf.settings = {
     "org/gnome/Console" = {
       custom-font = "Hack 10";
-      font-scale = 1.7000000000000006;
+      font-scale = 1.7;
       last-window-maximised = false;
       last-window-size = mkTuple [ 1010 646 ];
       use-system-font = false;
@@ -102,20 +102,41 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell" = {
-      disabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" "dash-to-dock@micxgx.gmail.com" ];
-      enabled-extensions = [ "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "dock-from-dash@fthx" "trayIconsReloaded@selfmade.pl" "system-monitor@gnome-shell-extensions.gcampax.github.com" "TopIcons@phocean.net" "appindicatorsupport@rgcjonas.gmail.com" ];
+      disabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "dock-from-dash@fthx" "trayIconsReloaded@selfmade.pl" "system-monitor@gnome-shell-extensions.gcampax.github.com" "TopIcons@phocean.net" "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com" ];
       favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "idea-community.desktop" "org.gnome.Console.desktop" ];
       last-selected-power-profile = "power-saver";
       welcome-dialog-last-shown-version = "46.2";
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
+      always-center-icons = false;
+      apply-custom-theme = false;
+      autohide-in-fullscreen = false;
+      background-color = "rgb(36,31,49)";
       background-opacity = 0.8;
-      dash-max-icon-size = 48;
+      custom-background-color = false;
+      custom-theme-shrink = true;
+      dash-max-icon-size = 58;
+      disable-overview-on-startup = false;
       dock-position = "BOTTOM";
+      extend-height = false;
       height-fraction = 0.9;
+      hot-keys = false;
+      icon-size-fixed = false;
+      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
       preferred-monitor = -2;
-      preferred-monitor-by-connector = "eDP-1";
+      preferred-monitor-by-connector = "eDP-2";
+      preview-size-scale = 0.0;
+      running-indicator-style = "DOTS";
+      show-apps-at-top = true;
+      show-favorites = true;
+      show-icons-emblems = false;
+      show-running = true;
+      show-show-apps-button = false;
+      show-trash = false;
+      show-windows-preview = false;
+      transparency-mode = "FIXED";
     };
 
     "org/gnome/shell/extensions/system-monitor" = {
@@ -133,6 +154,10 @@ with lib.hm.gvariant;
 
     "org/gnome/tweaks" = {
       show-extensions-notice = false;
+    };
+
+    "org/gtk/gtk4/settings/color-chooser" = {
+      selected-color = mkTuple [ true 0.1411764770746231 0.12156862765550613 0.1921568661928177 1.0 ];
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {

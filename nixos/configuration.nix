@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "asuna"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
@@ -36,6 +36,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -103,8 +104,6 @@
   services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
 
   users.defaultUserShell = pkgs.zsh;
-
-  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

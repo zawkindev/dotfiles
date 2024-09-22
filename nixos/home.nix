@@ -1,4 +1,4 @@
-{config, pkgs, ... }:
+{config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -23,6 +23,11 @@
     dconf2nix
     jetbrains-toolbox
     jetbrains.idea-community-bin
+    zulu17
+    greybird
+    blackbird
+    gruvbox-gtk-theme
+    elementary-xfce-icon-theme
   ];
 
   programs.git = {
@@ -48,7 +53,7 @@
   };
 
  
-programs.helix = {
+  programs.helix = {
     enable = true;
     defaultEditor = true;
     settings = {
@@ -109,11 +114,13 @@ programs.helix = {
     };
   };
 
-  home.file.".zshrc".text = ''
+  xfconf = {
+    enable = true;
+  };
+
+  home.file."~/.zshrc".text = ''
     eval "$(starship init zsh)"
   '';
 
   home.stateVersion = "24.05";
-
-  programs.home-manager.enable = true;
 }

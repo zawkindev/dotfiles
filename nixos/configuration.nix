@@ -45,7 +45,6 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  # services.xserver.desktopManager.xfce.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -90,29 +89,30 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  gnomeExtensions.user-themes
-  gnomeExtensions.dash-to-dock
-  gnomeExtensions.appindicator
-  gnomeExtensions.topicons-plus
-  gnomeExtensions.blur-my-shell
-	gnome.gnome-tweaks
-  colloid-gtk-theme
-  colloid-icon-theme
-  auto-cpufreq
-  powertop
-	evdevremapkeys
-	vim
-	telegram-desktop
-  neovim
-	git
-	wget
-	curl
-	vscodium
-	xclip
-	nixpkgs-fmt
-	nil
-  qbittorrent
-  zsh
+    gnomeExtensions.user-themes
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.appindicator
+    gnomeExtensions.topicons-plus
+    gnomeExtensions.blur-my-shell
+	  gnome.gnome-tweaks
+    colloid-gtk-theme
+    colloid-icon-theme
+    auto-cpufreq
+    powertop
+	  evdevremapkeys
+	  vim
+	  telegram-desktop
+    neovim
+    fastfetch
+	  git
+	  wget
+	  curl
+	  vscodium
+	  xclip
+	  nixpkgs-fmt
+	  nil
+    qbittorrent
+    zsh
   ];
 
   services.auto-cpufreq.enable = true;

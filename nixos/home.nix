@@ -3,7 +3,6 @@
 {
   imports = [
     ./dconf.nix
-#    ./i3wm.nix
   ];
 
   home.username = "shahruz";
@@ -19,7 +18,6 @@
     zsh
     starship
     alacritty
-#    alacritty-theme
     hackgen-nf-font
     hack-font
     dconf2nix
@@ -50,8 +48,8 @@
     settings = {
       env.TERM = "xterm-256color";
       window.padding = {
-        x = 3;
-        y = 1;
+        x = 5;
+        y = 3;
       };
 
       font = {
@@ -160,6 +158,24 @@
 
   home.file."~/.zshrc".text = ''
     eval "$(starship init zsh)"
+  '';
+
+  home.file."~/.ideavimrc".text = ''
+    :map fmt <Action>(ReformatCode)
+    :map mn <Action>(NextTab)
+    :map ml <Action>(PreviousTab)
+    :map ;r <Action>(FindInPath)
+    :map ;f <Action>(GotoFile)
+    :map nf <Action>(NewScratchFile)
+    :map np <Action>(WelcomeScreen.CreateDirectoryProject)
+    :map op <Action>($LRU)
+    :map sv <Action>(SplitVertically)
+    :map ss <Action>(SplitHorizontally)
+    :map sc <Action>(Unsplit)
+    
+    :map <C-t> <Action>(ActivateProjectToolWindow)
+    :map <C-=> <Action>(ZoomInIdeAction)
+    :map <C--> <Action>(ZoomOutIdeAction)
   '';
 
   home.stateVersion = "24.05";

@@ -19,6 +19,7 @@
     zsh
     starship
     alacritty
+#    alacritty-theme
     hackgen-nf-font
     hack-font
     dconf2nix
@@ -45,16 +46,39 @@
   
   programs.alacritty = {
     enable = true;
+
     settings = {
       env.TERM = "xterm-256color";
+      window.padding = {
+        x = 3;
+        y = 1;
+      };
+
       font = {
+        normal = {
+          family = "Hack";
+          style = "Regular";
+        };
+        bold = {
+          family = "Hack";
+          style = "Bold";
+        };
+        italic = {
+          family = "Hack";
+          style = "Italic";
+        };
+        bold_italic = {
+          family = "Hack";
+          style = "Bold Italic";
+        };
         size = 14;
       };
+
+      import = [ pkgs.alacritty-theme.carbonfox ];
       selection.save_to_clipboard = true;
     };
   };
 
- 
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -101,7 +125,8 @@
       yaml-language-server
       ansible-language-server
     ];
-  }; 
+  };
+   
 
   programs.zsh = {
     enable = true;

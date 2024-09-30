@@ -3,6 +3,7 @@
 {
   imports = [
     ./dconf.nix
+#    ./i3wm.nix
   ];
 
   home.username = "shahruz";
@@ -28,6 +29,7 @@
     blackbird
     gruvbox-gtk-theme
     elementary-xfce-icon-theme
+    upscayl
   ];
 
   programs.git = {
@@ -56,8 +58,21 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+
     settings = {
       theme = "autumn_night";
+    };
+
+    ignores = [
+      ".build/"
+      "!.gitignore"
+    ];
+
+    languages = {
+      language = [{
+        name = "nix";
+        formatter = { command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"; };
+      }];
     };
     
     extraPackages = with pkgs; [

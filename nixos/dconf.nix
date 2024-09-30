@@ -7,10 +7,14 @@ with lib.hm.gvariant;
   dconf.settings = {
     "org/gnome/Console" = {
       custom-font = "Hack 10";
-      font-scale = 1.7;
+      font-scale = 1.5;
       last-window-maximised = false;
       last-window-size = mkTuple [ 1010 646 ];
       use-system-font = false;
+    };
+
+    "org/gnome/Loupe" = {
+      show-properties = true;
     };
 
     "org/gnome/control-center" = {
@@ -41,6 +45,12 @@ with lib.hm.gvariant;
       translate = true;
     };
 
+    "org/gnome/desktop/background" = {
+      picture-options = "zoom";
+      picture-uri = "file:///home/shahruz/.config/background";
+      picture-uri-dark = "file:///home/shahruz/.config/background";
+    };
+
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "us" ]) ];
       xkb-options = [ "ctrl:swapcaps" ];
@@ -48,6 +58,9 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      cursor-theme = "Adwaita";
+      gtk-theme = "Adwaita-dark";
+      icon-theme = "Colloid-dark";
       monospace-font-name = "Hack 12";
     };
 
@@ -71,12 +84,20 @@ with lib.hm.gvariant;
       application-id = "org.gnome.Console.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/org-gnome-settings" = {
+      application-id = "org.gnome.Settings.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-telegram-desktop" = {
       application-id = "org.telegram.desktop.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/upscayl" = {
+      application-id = "upscayl.desktop";
+    };
+
     "org/gnome/desktop/peripherals/keyboard" = {
-      numlock-state = true;
+      numlock-state = false;
     };
 
     "org/gnome/desktop/sound" = {
@@ -91,8 +112,34 @@ with lib.hm.gvariant;
       switch-to-workspace-right = [ "<Control><Alt>l" ];
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:close";
+    };
+
+    "org/gnome/epiphany/state" = {
+      is-maximized = false;
+      window-size = mkTuple [ 1024 768 ];
+    };
+
     "org/gnome/evolution-data-server" = {
       migrated = true;
+    };
+
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "processes";
+      show-dependencies = false;
+      show-whose-processes = "user";
+    };
+
+    "org/gnome/gnome-system-monitor/disktreenew" = {
+      col-6-visible = true;
+      col-6-width = 0;
+    };
+
+    "org/gnome/gnome-system-monitor/proctree" = {
+      columns-order = [ 0 1 8 2 3 4 6 7 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
+      sort-col = 0;
+      sort-order = 0;
     };
 
     "org/gnome/nautilus/preferences" = {
@@ -101,12 +148,77 @@ with lib.hm.gvariant;
       search-filter-time-type = "last_modified";
     };
 
+    "org/gnome/nautilus/window-state" = {
+      initial-size = mkTuple [ 890 550 ];
+    };
+
     "org/gnome/shell" = {
       disabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "dock-from-dash@fthx" "trayIconsReloaded@selfmade.pl" "system-monitor@gnome-shell-extensions.gcampax.github.com" "TopIcons@phocean.net" "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "idea-community.desktop" "org.gnome.Console.desktop" ];
-      last-selected-power-profile = "power-saver";
+      enabled-extensions = [ "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "dock-from-dash@fthx" "trayIconsReloaded@selfmade.pl" "system-monitor@gnome-shell-extensions.gcampax.github.com" "TopIcons@phocean.net" "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com" "blur-my-shell@aunetx" ];
+      favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "idea-community.desktop" "org.gnome.Console.desktop" "org.telegram.desktop.desktop" ];
+      last-selected-power-profile = "performance";
       welcome-dialog-last-shown-version = "46.2";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      pipelines = "<{'pipeline_default': {'name': 'Default', 'effects': [{'type': 'native_static_gaussian_blur', 'id': 'effect_000000000000', 'params': {'radius': 30, 'brightness': 1, 'unscaled_radius': 0}}]}, 'pipeline_default_rounded': {'name': 'Default rounded', 'effects': [{'type': 'native_static_gaussian_blur', 'id': 'effect_000000000001', 'params': {'radius': 30, 'brightness': 0.6}}, {'type': 'corner', 'id': 'effect_000000000002', 'params': {'radius': 24}}]}}>";
+      settings-version = 2;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+      blur = false;
+      brightness = 0.6;
+      sigma = 83;
+      style-dialogs = 3;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = false;
+      brightness = 0.6;
+      override-background = false;
+      pipeline = "pipeline_default_rounded";
+      sigma = 22;
+      static-blur = true;
+      style-dash-to-dock = 0;
+      unblur-in-overview = false;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
+      blur-original-panel = true;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/hidetopbar" = {
+      compatibility = false;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/overview" = {
+      pipeline = "pipeline_default_rounded";
+      style-components = 3;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      blur = true;
+      brightness = 1.0;
+      force-light-text = false;
+      override-background = true;
+      override-background-dynamically = false;
+      pipeline = "pipeline_default";
+      sigma = 0;
+      static-blur = false;
+      style-panel = 3;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      brightness = 0.6;
+      sigma = 30;
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
@@ -149,6 +261,10 @@ with lib.hm.gvariant;
       applications = "[{\"id\":\"org.telegram.desktop.desktop\",\"hidden\":false}]";
     };
 
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Colloid-Dark";
+    };
+
     "org/gnome/shell/world-clocks" = {
       locations = [];
     };
@@ -158,8 +274,8 @@ with lib.hm.gvariant;
     };
 
     "org/gtk/gtk4/settings/color-chooser" = {
-      custom-colors = [ (mkTuple [ 0.20666666328907013 0.1970222145318985 0.1970222145318985 1.0 ]) ];
-      selected-color = mkTuple [ true 0.20666666328907013 0.1970222145318985 0.1970222145318985 1.0 ];
+      custom-colors = [ (mkTuple [ 0.206667 0.197022 0.197022 1.0 ]) ];
+      selected-color = mkTuple [ true 0.206667 0.197022 0.197022 1.0 ];
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {

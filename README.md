@@ -10,7 +10,7 @@
 - `powershell` config
 - custom Solarized `Alacritty` colorscheme
 - `waybar` and `rofi` with Solarized colorscheme
-- [`wallpaper`](./wallpaper/wallpaper.png)
+- [`wallpaper`](./wallpaper.png)
 
 <hr />
 

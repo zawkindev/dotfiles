@@ -1,4 +1,4 @@
-{config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -9,7 +9,7 @@
   home.homeDirectory = "/home/shahruz";
 
   home.packages = with pkgs; [
-    neovim 
+    neovim
     telegram-desktop
     neofetch
     ripgrep
@@ -18,16 +18,12 @@
     zsh
     starship
     alacritty
-    hackgen-nf-font
     hack-font
     dconf2nix
     jetbrains-toolbox
     jetbrains.idea-community-bin
     zulu17
-    greybird
-    blackbird
-    gruvbox-gtk-theme
-    elementary-xfce-icon-theme
+    pgadmin4-desktopmode
     upscayl
   ];
 
@@ -41,7 +37,7 @@
     enable = true;
   };
 
-  
+
   programs.alacritty = {
     enable = true;
 
@@ -96,7 +92,7 @@
         formatter = { command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"; };
       }];
     };
-    
+
     extraPackages = with pkgs; [
       nodePackages.bash-language-server
       clang-tools
@@ -124,7 +120,7 @@
       ansible-language-server
     ];
   };
-   
+
 
   programs.zsh = {
     enable = true;
@@ -134,49 +130,46 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "history-substring-search" "colored-man-pages" "z"];
+      plugins = [ "git" "history-substring-search" "colored-man-pages" "z" ];
     };
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch";
       ll = "ls -l";
-      cls="clear";
-      tx="tmux";
-      g="git";
-      gc="git clone";
-      ga="git add .";
-      gs="git status";
-      gcm="git commit -m";
-      gpsh="git push";
-      gpl="git pull";
+      cls = "clear";
+      tx = "tmux";
+      g = "git";
+      gc = "git clone";
+      ga = "git add .";
+      gs = "git status";
+      gcm = "git commit -m";
+      gpsh = "git push";
+      gpl = "git pull";
     };
   };
 
-  xfconf = {
-    enable = true;
+  home.file = {
+    "~/.zshrc".text = ''
+      eval "$(starship init zsh)"
+    '';
+
+    "~/.ideavimrc".text = ''
+      :map fmt <Action>(ReformatCode)
+      :map mn <Action>(NextTab)
+      :map ml <Action>(PreviousTab)
+      :map ;r <Action>(FindInPath)
+      :map ;f <Action>(GotoFile)
+      :map nf <Action>(NewScratchFile)
+      :map np <Action>(WelcomeScreen.CreateDirectoryProject)
+      :map op <Action>($LRU)
+      :map sv <Action>(SplitVertically)
+      :map ss <Action>(SplitHorizontally)
+      :map sc <Action>(Unsplit)
+      
+      :map <C-t> <Action>(ActivateProjectToolWindow)
+      :map <C-=> <Action>(ZoomInIdeAction)
+      :map <C--> <Action>(ZoomOutIdeAction)
+    '';
   };
-
-  home.file."~/.zshrc".text = ''
-    eval "$(starship init zsh)"
-  '';
-
-  home.file."~/.ideavimrc".text = ''
-    :map fmt <Action>(ReformatCode)
-    :map mn <Action>(NextTab)
-    :map ml <Action>(PreviousTab)
-    :map ;r <Action>(FindInPath)
-    :map ;f <Action>(GotoFile)
-    :map nf <Action>(NewScratchFile)
-    :map np <Action>(WelcomeScreen.CreateDirectoryProject)
-    :map op <Action>($LRU)
-    :map sv <Action>(SplitVertically)
-    :map ss <Action>(SplitHorizontally)
-    :map sc <Action>(Unsplit)
-    
-    :map <C-t> <Action>(ActivateProjectToolWindow)
-    :map <C-=> <Action>(ZoomInIdeAction)
-    :map <C--> <Action>(ZoomOutIdeAction)
-  '';
 
   home.stateVersion = "24.05";
 }

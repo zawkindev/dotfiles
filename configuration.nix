@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -16,8 +17,8 @@
   boot.kernelParams = [ "usbcore.autosuspend=-1" ];
 
   systemd.services.powertop = {
-    description = "powertop"; 
-    wantedBy = ["multi-user.target"];
+    description = "powertop";
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       ExecStart = "${pkgs.powertop}/bin/powertop --auto-tune";
     };
@@ -27,8 +28,8 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -75,7 +76,7 @@
     description = "Shahruz Norimmatov";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -94,23 +95,24 @@
     gnomeExtensions.appindicator
     gnomeExtensions.topicons-plus
     gnomeExtensions.blur-my-shell
-	  gnome.gnome-tweaks
+    gnome.gnome-tweaks
+    orchis-theme
     colloid-gtk-theme
     colloid-icon-theme
     auto-cpufreq
     powertop
-	  evdevremapkeys
-	  vim
-	  telegram-desktop
+    evdevremapkeys
+    vim
+    telegram-desktop
     neovim
     fastfetch
-	  git
-	  wget
-	  curl
-	  vscodium
-	  xclip
-	  nixpkgs-fmt
-	  nil
+    git
+    wget
+    curl
+    vscodium
+    xclip
+    nixpkgs-fmt
+    nil
     qbittorrent
     zsh
   ];
@@ -119,30 +121,30 @@
   services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
   users.defaultUserShell = pkgs.zsh;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_16;
+    ensureDatabases = [ "b1_db" ];
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+      local all      all                    trust
+      host  all      all     127.0.0.1/32   trust
+      host  all      all     ::1/128        trust
+    '';
+    initialScript = pkgs.writeText "backend-initScript" ''
+      CREATE ROLE nixcloud WITH LOGIN PASSWORD 'nixcloud' CREATEDB;
+      CREATE DATABASE nixcloud;
+      GRANT ALL PRIVILEGES ON DATABASE nixcloud TO nixcloud;
+    '';
+  };
 
-  # List services that you want to enable:
+  services.pgadmin = {
+    enable = true;
+    initialEmail = "zawkindev@gmail.com";
+    initialPasswordFile = "/var/lib/pgadmin/initial-password"; # Define this file
+    # port = 5432;
+  };
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
